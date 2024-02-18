@@ -1,8 +1,11 @@
+import "react-native-gesture-handler";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import "@/styles/global.css";
 
-import { Slot } from "expo-router";
 import { StatusBar } from "expo-status-bar";
+import { Slot } from "expo-router";
+
+import { MovimentsProvaider } from "@/context/authContext";
 
 import {
   useFonts,
@@ -26,8 +29,10 @@ export default function Layout() {
 
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <StatusBar style="light" />
-      <Slot />
+      <MovimentsProvaider>
+        <StatusBar style="light" />
+        <Slot />
+      </MovimentsProvaider>
     </GestureHandlerRootView>
   );
 }
