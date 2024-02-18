@@ -11,7 +11,7 @@ type HeaderProps = {
 
 function Header({ children }: HeaderProps) {
   return (
-    <View className="h-56 w-full bg-gray-800 items-center justify-center">
+    <View className="h-56 w-full bg-purple-800 items-center justify-center">
       <View className="w-96 flex-row ">
         <View className="flex-1 justify-center">
           <Text className="text-2xl font-heading text-white">Olá, Douglas</Text>
@@ -29,7 +29,7 @@ function Header({ children }: HeaderProps) {
 function HeaderInfo() {
   return (
     <View
-      className="w-96 h-24 bg-white rounded-3xl absolute bottom-0 flex-row items-center justify-between px-4"
+      className="w-96 h-24 bg-gray-700 rounded-3xl absolute bottom-0 flex-row items-center justify-between px-4"
       style={{ bottom: -44, elevation: 3 }}
     ></View>
   );

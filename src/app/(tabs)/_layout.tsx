@@ -1,6 +1,7 @@
 import { colors } from "@/styles/colors";
-import { MaterialIcons } from "@expo/vector-icons";
-import { Tabs } from "expo-router";
+import { MaterialIcons, Octicons, AntDesign } from "@expo/vector-icons";
+import { Tabs, useFocusEffect } from "expo-router"; // Importe useFocusEffect de expo-router
+import { View, Text } from "react-native";
 
 export default function TabLayout() {
   return (
@@ -8,24 +9,22 @@ export default function TabLayout() {
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
-          backgroundColor: colors.gray[800],
+          backgroundColor: colors.gray[50],
           borderTopWidth: 0,
-          minHeight: 60,
-        },
-        tabBarItemStyle: {
-          paddingBottom: 14,
-          paddingTop: 14,
+          elevation: 0,
+          paddingHorizontal: 80,
+          minHeight: 90,
         },
         tabBarShowLabel: false,
-        tabBarActiveTintColor: colors.purple[300],
+        tabBarActiveTintColor: colors.purple[400],
         tabBarInactiveTintColor: colors.gray[400],
       }}
     >
       <Tabs.Screen
         name="index"
         options={{
-          tabBarIcon: ({ color, size }) => (
-            <MaterialIcons name="apps" size={size} color={color} />
+          tabBarIcon: ({ color }) => (
+            <AntDesign name="home" size={32} color={color} />
           ),
         }}
       />
@@ -33,19 +32,18 @@ export default function TabLayout() {
         name="register"
         options={{
           tabBarIcon: ({ color, size }) => (
-            <MaterialIcons name="attach-money" size={size} color={color} />
+            <View className="bg-purple-700 p-4 rounded-xl mb-6">
+              <AntDesign name="plussquareo" size={24} color={colors.white} />
+            </View>
           ),
+          tabBarStyle: { display: "none" },
         }}
       />
       <Tabs.Screen
         name="extract"
         options={{
-          tabBarIcon: ({ color, size }) => (
-            <MaterialIcons
-              name="insert-chart-outlined"
-              size={size}
-              color={color}
-            />
+          tabBarIcon: ({ color }) => (
+            <AntDesign name="profile" size={32} color={color} />
           ),
         }}
       />
