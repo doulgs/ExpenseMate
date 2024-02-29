@@ -11,27 +11,56 @@ type HeaderProps = {
 
 function Header({ children }: HeaderProps) {
   return (
-    <View className="h-56 w-full bg-purple-800 items-center justify-center">
-      <View className="w-96 flex-row ">
-        <View className="flex-1 justify-center">
-          <Text className="text-2xl font-heading text-white">Olá, Douglas</Text>
-          <Text className="text-md font-body text-white">
-            Mantenha suas contas em dia
+    <View className=" w-full bg-gray-800 items-center justify-center mt-8">
+      <View className="flex-row ">
+        <Avatar
+          source={{ uri: "https://github.com/doulgs.png" }}
+          size="small"
+        />
+
+        <View className="flex-1 justify-center ml-4">
+          <Text className="text-md font-heading text-white">Olá, Douglas</Text>
+          <Text className="text-2xl font-body text-white">
+            Douglas Domiciano
           </Text>
         </View>
-        <Avatar source={{ uri: "https://github.com/doulgs.png" }} />
       </View>
-      {children}
+
+      <View className="w-full">
+        <HeaderInfo />
+        <View className="flex-row">
+          <HeaderCard />
+          <HeaderCard />
+        </View>
+      </View>
     </View>
   );
 }
 
 function HeaderInfo() {
   return (
-    <View
-      className="w-96 h-24 bg-gray-700 rounded-3xl absolute bottom-0 flex-row items-center justify-between px-4"
-      style={{ bottom: -44, elevation: 3 }}
-    ></View>
+    <View className="gap-4 mt-8 mb-4">
+      <View className="flex-row justify-between">
+        <Text className="text-md font-body text-white">
+          resumo de Fevereiro
+        </Text>
+        <Text className="text-md font-body text-white">26 Fev. 2024</Text>
+      </View>
+      <View
+        className="w-full h-24 bg-gray-700 rounded-3xl flex-row items-center justify-between "
+        style={{ elevation: 3 }}
+      ></View>
+    </View>
+  );
+}
+function HeaderCard() {
+  return (
+    <View className="gap-4">
+      <View
+        className="w-full h-24 bg-gray-700 rounded-3xl flex-row items-center justify-between "
+        style={{ elevation: 3 }}
+      ></View>
+    </View>
   );
 }
 

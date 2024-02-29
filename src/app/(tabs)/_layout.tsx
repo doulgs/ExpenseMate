@@ -14,14 +14,14 @@ export default function TabLayout() {
         screenOptions={{
           headerShown: false,
           tabBarStyle: {
-            backgroundColor: colors.gray[50],
+            backgroundColor: colors.gray[800],
             borderTopWidth: 0,
             elevation: 0,
             paddingHorizontal: 60,
             minHeight: Platform.OS === "ios" ? 120 : 90,
           },
           tabBarShowLabel: false,
-          tabBarActiveTintColor: colors.purple[400],
+          tabBarActiveTintColor: colors.purple[600],
           tabBarInactiveTintColor: colors.gray[400],
         }}
       >
@@ -46,6 +46,14 @@ export default function TabLayout() {
         />
         <Tabs.Screen
           name="extract"
+          options={{
+            tabBarIcon: ({ color }) => (
+              <AntDesign name="profile" size={32} color={color} />
+            ),
+          }}
+        />
+        <Tabs.Screen
+          name="Home/index"
           options={{
             tabBarIcon: ({ color }) => (
               <AntDesign name="profile" size={32} color={color} />
